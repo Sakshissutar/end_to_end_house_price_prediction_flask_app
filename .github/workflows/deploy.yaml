@@ -1,3 +1,4 @@
+
 name: CI/CD for Dockerized Flask App
 
 on:
@@ -7,12 +8,6 @@ on:
     branches: [ main ]
 
 jobs:
-  dockerbuild:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Build The Docker Image
-      run: docker build . --file Dockerfile --tag workflow-test:$(date +%s)
   build-and-test:
     runs-on: ubuntu-latest
 
@@ -55,27 +50,29 @@ jobs:
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/flaskapp:latest
 
-    - name: Image digest
-      run: echo ${{ steps.build-and-publish.outputs.digest }}
 
   deploy:
     needs: build-and-publish
     runs-on: ubuntu-latest
+
     steps:
-      - name: Deploy on EC2
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ubuntu
-          key: ${{ secrets.EC2_SSH_KEY }}
-          script: |
-            echo "Pull latest Docker image"
-            docker pull ${{ secrets.DOCKER_USERNAME }}/flaskapp:latest
+    - name: Deploy on EC2
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ubuntu
+        key: ${{ secrets.EC2_SSH_KEY }}
+        script: |
+          echo "Pull latest Docker image"
+          docker pull ${{ secrets.DOCKER_USERNAME }}/flaskapp:latest
 
-            echo "Remove old container"
-            docker rm -f flask_app || true
+          echo "Remove old container"
+          docker rm -f flask_app || true
 
-            echo "Run new container"
-            docker run -d -p 5000:5000 \
-              --name flask_app \
-              ${{ secrets.DOCKER_USERNAME }}/flaskapp:latest
+          echo "Run new container"
+          docker run -d -p 5000:5000 \
+            --name flask_app \
+            ${{ secrets.DOCKER_USERNAME }}/flaskapp:latest
+
+          echo "Clean old images"
+          docker image prune -af
