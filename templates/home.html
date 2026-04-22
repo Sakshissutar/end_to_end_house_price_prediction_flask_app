@@ -17,7 +17,7 @@
     	<h1>Flask House Price Prediction</h1>
     
             <!-- Main Input For Receiving Query to our ML -->
-           <form action="{{ url_for('predict')}}"method="post">
+           <form action="{{ url_for('predict')}}#result" method="post">
                 <label for="kitchen_area">kitchen area</label>
                 <input type="text" name="kitchen_area" placeholder="   0.0" required="required" /><br>
                 <label for="kitchen_area">bath area</label>
@@ -80,7 +80,7 @@
          
           
         </div>
-        <div class="predict">
+        <div class="predict" id="result">
             {{prediction_text}}
         </div>
     </body>
