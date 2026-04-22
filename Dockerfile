@@ -5,6 +5,6 @@ COPY . /app
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 8501
+EXPOSE 5000
 
-CMD ["python", "app.py", "--server.port=5000", "--server.address=0.0.0.0"]
+CMD ["python", "app.py"]
