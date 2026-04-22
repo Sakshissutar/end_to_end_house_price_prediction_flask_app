@@ -1,5 +1,7 @@
 # house_price_prediction
-this projects helps to predict the house prices using user inputs
+This project is an end-to-end machine learning application that predicts house prices based on various features. The project demonstrates the complete ML lifecycle including data processing, model training, deployment, and CI/CD automation using Docker and AWS EC2.
+this app is created using flask and deployed thriugh docker and EC2 using github actions.
 
 # App is live on:
 http://51.21.134.241:5000/predict
+
