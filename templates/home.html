@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html >
+
+    <head>
+        <meta charset="UTF-8">
+        <title>ML API</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <!-- <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'> -->
+      
+    </head>
+    
+    <body>
+        <div class="login">
+    	<h1>House Price Prediction</h1>
+    
+            <!-- Main Input For Receiving Query to our ML -->
+           <form action="{{ url_for('predict')}}"method="post">
+                <label for="kitchen_area">kitchen area</label>
+                <input type="text" name="kitchen_area" placeholder="   0.0" required="required" /><br>
+                <label for="kitchen_area">bath area</label>
+           	 <input type="text" name="bath_area" placeholder="   0.0" required="required" /><br>
+                <label for="other_area">other area</label>
+                <input type="text" name="other_area" placeholder="   0.0" required="required" /><br>
+                <label for="extra_area">extra area</label>
+                <input type="text" name="extra_area" placeholder="   0.0" required="required" /><br>
+                <label for="extra_area_count">extra area count</label>
+                <input type="text" name="extra_area_count" placeholder="   0.0" required="required" /><br>
+                <label for="year">year</label>
+                <input type="text" name="year" placeholder="   0.0" required="required" /><br>
+                <label for="ceil_height">ceil height</label>
+                <input type="text" name="ceil_height" placeholder="   0.0" required="required" /><br>
+                <label for="floor_max">floor max</label>
+                <input type="text" name="floor_max" placeholder="   0.0" required="required" /><br>
+                <label for="floor">floor</label>
+                <input type="text" name="floor" placeholder="   0.0" required="required" /><br>
+                <label for="total_area">total area</label>
+                <input type="text" name="total_area" placeholder="   0.0" required="required" /><br>
+                <label for="bath_count">bath count</label>
+                <input type="text" name="bath_count" placeholder="   0.0" required="required" /><br>
+                <label for="rooms_count">rooms count</label>
+                <input type="text" name="rooms_count" placeholder="   0.0" required="required" /><br>
+                <label for="gas">gas</label>
+                <select id="gas" name="gas">
+                     <option value="Yes">Yes</option>
+                     <option value="No">No</option>
+                </select> 
+                <label for="hot_water">hot water</label>              
+                <select id="hot_water" name="hot_water">
+                     <option value="Yes">Yes</option>
+                     <option value="No">No</option>
+                </select>
+                <label for="central_heating">central heating</label>               
+                <select id="central_heating" name="central_heating">
+                     <option value="Yes">Yes</option>
+                     <option value="No">No</option>
+                </select>
+                <label for="extra_area_type_name">extra area type name</label>              
+                <select id="extra_area_type_name" name="extra_area_type_name">
+                     <option value="loggia">loggia</option>
+                     <option value="balcony">balcony</option>
+                </select>
+                <label for="district_name">district name</label>                
+                <select id="district_name" name="district_name">
+                     <option value="Moskovskij">Moskovskij</option>
+                     <option value="Nevskij">Nevskij</option>
+                     <option value="Kirovskij">Kirovskij</option>
+                     <option value="Krasnoselskij">Krasnoselskij</option>
+                     <option value="Vyborgskij">Vyborgskij</option>
+                     <option value="Centralnyj">Centralnyj</option>
+                     <option value="Petrogradskij">Petrogradskij</option>
+                </select>               
+                <button type="submit" class="btn">Predict</button>
+           </form>
+    
+          <br>
+          <br>
+         
+          
+        </div>
+        <div class="predict">
+            {{prediction_text}}
+        </div>
+    </body>
+</html>
