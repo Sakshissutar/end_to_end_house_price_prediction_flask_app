@@ -3,7 +3,7 @@ This project is an end-to-end machine learning application that predicts house p
 this app is created using flask and deployed through docker and EC2 using github actions.
 
 # App is live on:
-[http://51.21.134.241:5000/predict](http://51.21.134.241:5000/predict)
+[http://51.21.134.241:5000/](http://51.21.134.241:5000/)
 
 # Used Technologies
 - Python
