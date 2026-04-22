@@ -5,3 +5,10 @@ this app is created using flask and deployed thriugh docker and EC2 using github
 # App is live on:
 http://51.21.134.241:5000/predict
 
+# Used Technologies
+- Python
+- Flask
+- Github actions
+- docker
+- Amazon EC2
+
