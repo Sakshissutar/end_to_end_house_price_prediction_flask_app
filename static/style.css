@@ -5,7 +5,7 @@
   --text-color: light-dark(#333333, #efefef);
 
   /* NEW */
-  --input-bg: light-dark(#f0f3f5, #1e1e1e);
+  --input-bg: light-dark(#f0f3f5, #323232);
   --input-border: light-dark(#d0d7de, #333);
   --input-text: light-dark(#222, #eee);
 }
@@ -32,7 +32,7 @@ input{
     height:40px;
     width: 700px;
     margin: 5px;
-    background-color: light-dark(#f0f3f5, #1e1e1e);
+    background-color: var(--input-bg);
     border: none;
     border-radius: 7px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -46,7 +46,7 @@ select{
     height: 45px;
     width: 707px;
     margin: 5px;
-    background-color:  light-dark(#f0f3f5, #1e1e1e);
+    background-color:  var(--input-bg);
     border: none;
     border-radius: 7px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -79,6 +79,7 @@ button{
 }
 button:hover{
     background-color:rgb(39, 140, 53) ;
+    display: none;
 }
 
 label {
@@ -93,7 +94,7 @@ label {
     margin-left: 395px;
     padding-right: 400px;
     margin-bottom: 50px;
-
+    display: none;
     border-radius: 10px;
 
     /* green glass effect */

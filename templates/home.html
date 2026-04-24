@@ -14,7 +14,7 @@
     
     <body>
         <div class="login">
-    	<h1>Flask House Price Prediction</h1>
+    	<h1>House Price Prediction</h1>
     
             <!-- Main Input For Receiving Query to our ML -->
            <form action="{{ url_for('predict')}}#result" method="post">
@@ -59,18 +59,18 @@
                 </select>
                 <label for="extra_area_type_name">extra area type name</label>              
                 <select name="extra_area_type_name">
-                    <option value="Yes" {% if request.form.get('extra_area_type_name') == 'Yes' %}selected{% endif %}>Yes</option>
-                    <option value="No" {% if request.form.get('extra_area_type_name') == 'No' %}selected{% endif %}>No</option>
+                    <option value="Loggia" {% if request.form.get('extra_area_type_name') == 'Loggia' %}selected{% endif %}>Loggia</option>
+                    <option value="Balcony" {% if request.form.get('extra_area_type_name') == 'Balcony' %}selected{% endif %}>Balcony</option>
                 </select>
                 <label for="district_name">district name</label>                
                 <select id="district_name" name="district_name">
-                     <option value="Moskovskij" {% if request.form.get('district_name') == 'Moskovskij' %}selected{% endif %}>Moskovskij</option>
-                     <option value="Nevskij" {% if request.form.get('district_name') == 'Nevskij' %}selected{% endif %}>Nevskij</option>
-                     <option value="Kirovskij" {% if request.form.get('district_name') == 'Kirovskij' %}selected{% endif %}>Kirovskij</option>
-                     <option value="Krasnoselskij" {% if request.form.get('district_name') == 'Krasnoselskij' %}selected{% endif %}>Krasnoselskij</option>
-                     <option value="Vyborgskij" {% if request.form.get('district_name') == 'Vyborgskij' %}selected{% endif %}>Vyborgskij</option>
-                     <option value="Centralnyj" {% if request.form.get('district_name') == 'Centralnyj' %}selected{% endif %}>Centralnyj</option>
-                     <option value="Petrogradskij" {% if request.form.get('district_name') == 'Petrogradskij' %}selected{% endif %}>Petrogradskij</option>
+                     <option value="Pune" {% if request.form.get('district_name') == 'Pune' %}selected{% endif %}>Pune</option>
+                     <option value="Satara" {% if request.form.get('district_name') == 'Satara' %}selected{% endif %}>Satara</option>
+                     <option value="Thane" {% if request.form.get('district_name') == 'Thane' %}selected{% endif %}>Thane</option>
+                     <option value="Nagpur" {% if request.form.get('district_name') == 'Nagpur' %}selected{% endif %}>Nagpur</option>
+                     <option value="Nashik" {% if request.form.get('district_name') == 'Nashik' %}selected{% endif %}>Nashik</option>
+                     <option value="Rantnagiri" {% if request.form.get('district_name') == 'Rantnagiri' %}selected{% endif %}>Rantnagiri</option>
+                     <option value="Mumbai" {% if request.form.get('district_name') == 'Mumbai' %}selected{% endif %}>Mumbai</option>
                 </select>               
                 <button type="submit" class="btn">Predict</button>
            </form>
