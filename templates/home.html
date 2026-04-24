@@ -80,8 +80,10 @@
          
           
         </div>
+        {% if prediction_text %}
         <div class="predict" id="result">
-            <a>{{prediction_text}}</a>
+            {{prediction_text}}
         </div>
+        {% endif % }
     </body>
 </html>
