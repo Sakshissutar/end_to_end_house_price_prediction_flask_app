@@ -42,10 +42,10 @@ def predict():
             value = request.form.get(field)
 
             try:
-                if float(value) == 0:
+                if float(value) <= 0:
                     return render_template(
                         "home.html",
-                        prediction_text="All values must be non-zero"
+                        prediction_text="All values must be non-zero and positive"
                     )
             except:
                 return render_template(
