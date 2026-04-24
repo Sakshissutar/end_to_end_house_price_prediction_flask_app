@@ -79,7 +79,6 @@ button{
 }
 button:hover{
     background-color:rgb(39, 140, 53) ;
-    display: none;
 }
 
 label {
@@ -88,6 +87,7 @@ label {
     font-size:medium;
 }
 .predict {
+    display: none;
     margin-top: 5px;
     width: 300px;
     padding: 10px;
