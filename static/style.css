@@ -87,7 +87,7 @@ label {
     font-size:medium;
 }
 .predict {
-    display: none;
+    display:block;
     margin-top: 5px;
     width: 300px;
     padding: 10px;
