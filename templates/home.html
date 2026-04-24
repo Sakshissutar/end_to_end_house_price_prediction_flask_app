@@ -59,8 +59,8 @@
                 </select>
                 <label for="extra_area_type_name">extra area type name</label>              
                 <select name="extra_area_type_name">
-                    <option value="Loggia" {% if request.form.get('extra_area_type_name') == 'Loggia' %}selected{% endif %}>Loggia</option>
-                    <option value="Balcony" {% if request.form.get('extra_area_type_name') == 'Balcony' %}selected{% endif %}>Balcony</option>
+                    <option value="loggia" {% if request.form.get('extra_area_type_name') == 'loggia' %}selected{% endif %}>Loggia</option>
+                    <option value="balcony" {% if request.form.get('extra_area_type_name') == 'balcony' %}selected{% endif %}>Balcony</option>
                 </select>
                 <label for="district_name">district name</label>                
                 <select id="district_name" name="district_name">
