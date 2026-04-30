@@ -32,7 +32,7 @@ form{
 input{
     /* display: grid;
     place-items: center; */
-    height:40px;
+    height:41px;
     width: 100%;
     max-width: 700px;
     margin: 5px;
@@ -47,7 +47,7 @@ input{
 select{
     /* display: grid;
     place-items: center; */
-    height: 45px;
+    height: 46px;
     width: 100%;
     max-width: 707px;
     margin: 5px;
