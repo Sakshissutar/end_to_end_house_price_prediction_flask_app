@@ -22,15 +22,19 @@ h1{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 form{
-    display: grid;
     place-items: center;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 input{
     /* display: grid;
     place-items: center; */
     height:40px;
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
     margin: 5px;
     background-color: var(--input-bg);
     border: none;
@@ -44,7 +48,8 @@ select{
     /* display: grid;
     place-items: center; */
     height: 45px;
-    width: 707px;
+    width: 100%;
+    max-width: 707px;
     margin: 5px;
     background-color:  var(--input-bg);
     border: none;
@@ -71,7 +76,8 @@ button{
     border-radius: 7px;
     width: 100px;
     height: 40px;
-    margin-right: 610px;
+    width: 100%;
+    max-width: 200px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     font-size: 90%;
@@ -85,6 +91,8 @@ label {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-width: 47%;
     font-size:medium;
+    width: 100%;
+    max-width: 700px;
 }
 .predict {
     margin-top: 5px;
